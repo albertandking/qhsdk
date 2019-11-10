@@ -246,4 +246,7 @@ root 设置为 [qhsdk](https://pypi.org/project/qhsdk/) 爬数据时存储的默
 
 0.0.5
 新增通过用户名和密码登录并访问VIP资源功能
+
+0.0.6
+修正导入问题
 ```

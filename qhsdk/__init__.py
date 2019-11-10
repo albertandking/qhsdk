@@ -15,9 +15,12 @@
 
 0.0.5
 新增通过用户名和密码登录并访问VIP资源功能
+
+0.0.6
+修正导入问题
 """
 
-__version__ = '0.0.5'
+__version__ = '0.0.6'
 __author__ = 'Albert King'
 
 """
@@ -26,3 +29,8 @@ __author__ = 'Albert King'
 from qhsdk.qhkc.qhkc_tool import (tool_foreign,
                                   tool_gdp,
                                   tool_nebula)
+
+"""
+for qhsdk pro api
+"""
+from qhsdk.pro.data_pro import (pro_api)

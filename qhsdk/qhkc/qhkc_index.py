@@ -12,10 +12,10 @@ from typing import AnyStr
 import pandas as pd
 import requests
 
-from qhsdk.futures.cons import QHKC_INDEX_URL, QHKC_INDEX_TREND_URL, QHKC_INDEX_PROFIT_LOSS_URL
+from qhsdk.qhkc.cons import QHKC_INDEX_URL, QHKC_INDEX_TREND_URL, QHKC_INDEX_PROFIT_LOSS_URL
 
 
-def get_qhkc_index(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_URL):
+def qhkc_index(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_URL):
     """
     奇货可查-指数-指数详情
     获得奇货可查的指数数据: '奇货黑链', '奇货商品', '奇货谷物', '奇货贵金属', '奇货饲料', '奇货软商品', '奇货化工', '奇货有色', '奇货股指', '奇货铁合金', '奇货油脂'
@@ -60,7 +60,7 @@ def get_qhkc_index(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_URL):
     return df_temp
 
 
-def get_qhkc_index_trend(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_TREND_URL):
+def qhkc_index_trend(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_TREND_URL):
     """
     奇货可查-指数-大资金动向
     获得奇货可查的指数数据: '奇货黑链', '奇货商品', '奇货谷物', '奇货贵金属', '奇货饲料', '奇货软商品', '奇货化工', '奇货有色', '奇货股指', '奇货铁合金', '奇货油脂'
@@ -132,7 +132,8 @@ def get_qhkc_index_trend(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX
     return df_temp
 
 
-def get_qhkc_index_profit_loss(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_PROFIT_LOSS_URL, start_date="", end_date=""):
+def qhkc_index_profit_loss(name: AnyStr = "奇货商品", url: AnyStr = QHKC_INDEX_PROFIT_LOSS_URL, start_date="",
+                           end_date=""):
     """
     奇货可查-指数-盈亏详情
     获得奇货可查的指数数据: '奇货黑链', '奇货商品', '奇货谷物', '奇货贵金属', '奇货饲料', '奇货软商品', '奇货化工', '奇货有色', '奇货股指', '奇货铁合金', '奇货油脂'
@@ -179,9 +180,9 @@ def get_qhkc_index_profit_loss(name: AnyStr = "奇货商品", url: AnyStr = QHKC
 
 
 if __name__ == "__main__":
-    data = get_qhkc_index("奇货谷物")
+    data = qhkc_index("奇货谷物")
     print(data)
-    data = get_qhkc_index_trend("奇货贵金属")
+    data = qhkc_index_trend("奇货贵金属")
     print(data)
-    data = get_qhkc_index_profit_loss("奇货贵金属", end_date="20190716")
+    data = qhkc_index_profit_loss("奇货贵金属", end_date="20190716")
     print(data)

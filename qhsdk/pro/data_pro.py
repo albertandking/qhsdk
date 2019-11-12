@@ -22,5 +22,5 @@ def pro_api(username='', password=""):
 
 if __name__ == '__main__':
     pro_api = pro_api("18328746465", "jindaxiang")
-    df = pro_api.toolbox_nebula()
+    df = pro_api.toolbox_brokers()
     print(df)

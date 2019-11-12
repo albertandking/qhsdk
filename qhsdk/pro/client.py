@@ -39,13 +39,19 @@ class DataApi:
     def query(self, api_name, fields="", **kwargs):
         res = requests.post(self.__http_url + api_name + ".php", timeout=self.__timeout, cookies={"PHPSESSID": self.__token})
         result = res.json()
-        if result["code"] != 0:
-            raise Exception(result["msg"])
-        data = result["data"]
-        columns = data["codes"]
-        items = data["data"]
-
-        return pd.DataFrame(items, index=columns)
+        if "date" not in result.keys():
+            if result["code"] != 0:
+                raise Exception(result["msg"])
+            data = result["data"]
+            columns = data["codes"]
+            items = data["data"]
+            return pd.DataFrame(items, index=columns)
+        else:
+            if result["code"] != 0:
+                raise Exception(result["msg"])
+            data = result["data"]
+            date = [result["date"]] * len(data)
+            return pd.DataFrame(data, index=date)
 
     def __getattr__(self, name):
         return partial(self.query, name)

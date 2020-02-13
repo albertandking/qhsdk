@@ -6,81 +6,56 @@ date: 2019/11/10 22:52
 contact: jindaxiang@163.com
 desc: 数据接口源代码
 """
-import pandas as pd
 from functools import partial
-import requests
+from urllib import parse
 
-from qhsdk.cons import dict_list, tool_gdp
+import pandas as pd
+import requests
 
 
 class DataApi:
-    __username = ""
-    __password = ""
-    __token = ""
-    __login_url = "https://api.qhkch.com/login"
-    __http_url = "https://qhkch.com/ajax/"
 
-    def __init__(self, username, password, timeout=15):
+    __token = ""
+    __http_url = "https://api.qhkch.com"
+
+    def __init__(self, token, timeout=10):
         """
-        API接口 username 和 password, 用于用户认证
-        :param username: str
-        :param password: str
-        :param timeout: int
+        初始化函数
+        :param token: API接口TOKEN，用于用户认证
+        :type token: str
+        :param timeout: 超时设置
+        :type timeout: int
         """
-        self.__username = username
-        self.__password = password
+        self.__token = token
         self.__timeout = timeout
 
-        res = requests.post(self.__login_url, data={"username": self.__username, "password": self.__password})
-        result = res.json()
-        if result["code"] != 0:
-            raise Exception(result["msg"])
-        else:
-            self.__token = result["data"]
-
     def query(self, api_name, fields="", **kwargs):
-        flag = [list(item.values())[0] for item in dict_list if api_name in list(item.keys())[0]][0]
-        if flag != "non":
-            res = requests.post(self.__http_url + api_name + ".php", timeout=self.__timeout, cookies={"PHPSESSID": self.__token})
-            result = res.json()
-        print(flag)
-        if flag == "cdm":
-            if result["code"] != 0:
-                raise Exception(result["msg"])
-            data = result["data"]
-            if api_name == "toolbox_brokers":
-                return pd.DataFrame([data["dates"], data["series"]]).T
-            elif api_name == "env":
-                return pd.DataFrame([data["date"], data["data"], data["info"]]).T
-            elif api_name == "fund_compare":
-                return pd.DataFrame(data["data"])
-            elif api_name in ("fund_bs_pie", "fund_position_pie", "fund_position_chge_pie"):
-                return pd.DataFrame([data["legends"], data["datas1"]]).T, pd.DataFrame(data["datas2"])
-            elif api_name == "fund_deal_pie":
-                return pd.DataFrame([data["legends"], data["datas"]]).T
-            elif api_name == "fund_all":
-                return pd.DataFrame([[data["date"]] * len(data["data"]), data["data"]]).T, pd.DataFrame([[data["date"]] * len(data["data"]), data["links"]])
+        """
+        :param api_name: 需要调取的接口
+        :type api_name: str
+        :param fields: 想要获取的字段
+        :type fields: str
+        :param kwargs: 指定需要输入的参数
+        :type kwargs: 键值对
+        :return: 指定的数据
+        :rtype: dict or pandas.DataFrame
+        """
+        headers = {
+            "X-Token": self.__token,
+        }
 
-            else:
-                return pd.DataFrame(data)
-        elif flag == "cddm":
-            if result["code"] != 0:
-                raise Exception(result["msg"])
-            data = result["data"]
-            date = [result["date"]] * len(data)
-            return pd.DataFrame(data, index=date)
-        elif flag == "cdmu":
-            if result["code"] != 0:
-                raise Exception(result["msg"])
-            data = result["data"]
-            return pd.DataFrame(data)
-        elif flag == "non":
-            if api_name == "gdp":
-                data = pd.read_html(tool_gdp, encoding="utf-8")
-                columns_list = data[0].columns.tolist()
-                columns_list[0] = "国家"
-                data[0].columns = columns_list
-                return data[0]
+        url = parse.urljoin(self.__http_url, "/".join([api_name, *kwargs.values()]))
+        res = requests.get(url, headers=headers, timeout=self.__timeout)
+        if res.status_code != 200:
+            raise Exception("连接异常, 请检查您的Token是否过期和输入的参数是否正确")
+        data_json = res.json()
+        if fields == "":
+            try:
+                return pd.DataFrame(data_json)
+            except ValueError as e:
+                return data_json
+        else:
+            return pd.DataFrame(data_json[fields])
 
     def __getattr__(self, name):
         return partial(self.query, name)

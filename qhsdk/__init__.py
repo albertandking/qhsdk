@@ -18,19 +18,24 @@
 
 0.0.6
 修正导入问题
+
+0.0.7
+更新 README 文档
+
+0.0.8
+第二版接口测试
 """
 
-__version__ = '0.0.6'
+__version__ = '0.0.8'
 __author__ = 'Albert King'
 
-"""
-奇货可查-工具
-"""
-from qhsdk.qhkc.qhkc_tool import (tool_foreign,
-                                  tool_gdp,
-                                  tool_nebula)
 
 """
 for qhsdk pro api
 """
-from qhsdk.pro.data_pro import (pro_api)
+from qhsdk.pro.data_pro import pro_api
+
+"""
+for qhsdk pro api token set
+"""
+from qhsdk.utils.token_process import set_token

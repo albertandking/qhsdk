@@ -1,10 +1,8 @@
 # [qhsdk](https://pypi.org/project/qhsdk/)
-(本文档更新于 **2019-11-23**; 如发现库和文档相关问题, 请联系 [qhsdk](https://github.com/jindaxiang/qhsdk) 的作者 **奇货可查**)
 
 ## [qhsdk](https://pypi.org/project/qhsdk/) 的介绍
 
-[qhsdk](https://pypi.org/project/qhsdk/) 主要是为 **https://qhkch.com/** 提供 SDK 的 Python 库, 您可以通过 [qhsdk文档](https://pypi.org/project/qhsdk/) 了解和查询详细数据接口！
-
+[qhsdk](https://pypi.org/project/qhsdk/) 主要是为 **https://qhkch.com/** 提供 SDK 的 Python 库, 您可以通过 [奇货可查机构VIP接口文档](https://www.showdoc.cc/qhkchapi?page_id=3878436763477725) 了解和查询详细数据接口！
 
 ## [qhsdk](https://pypi.org/project/qhsdk/) 服务于 **www.qhkch.com**
 
@@ -14,10 +12,9 @@
 
 [qhsdk](https://pypi.org/project/qhsdk/) 主要改进如下:
 
-1. 设计符合 RESTful 规范的 API 接口;
-2. 支持 Python 3.7.3 及以上版本;
-3. 目前提供奇货可查-工具板块接口, 正在开发其他 API 接口;   
-4. 提供完善的接口文档, 提高 [qhsdk](https://pypi.org/project/qhsdk/) 的易用性;
+1. [qhsdk](https://pypi.org/project/qhsdk/)支持 **Python 3.7** 及以上版本;
+2. 目前提供已提供奇货可查全部接口;
+3. 提供完善的接口文档, 提高 [qhsdk](https://pypi.org/project/qhsdk/) 的易用性;
 
 # 安装方法
 
@@ -27,46 +24,48 @@ pip install qhsdk
 
 # 升级方法
 
-**由于目前版本更新迭代, 请在使用前先升级库**
-
 ```
 pip install qhsdk --upgrade
 ```
 
 # 快速入门
 
-## 1. 先按照 [Anaconda安装说明及环境配置](#Anaconda安装说明及环境配置)
+目标数据: 奇货可查-商品-持仓数据接口
 
-## 2. 使用 [qhsdk](https://pypi.org/project/qhsdk/) 提供的数据接口
+示例代码:
 
-目标网页: https://qhkch.com/ajax/toolbox_nebula.php
-
-路径: 奇货可查-工具-龙虎星云图
-
-查看 [奇货可查-工具-龙虎星云图](https://qhkch.com/ajax/toolbox_nebula.php) 提供的数据
-
-代码:
 ```python
 import qhsdk as qh
-pro = qh.pro_api("帐号", "密码")
-df = pro.toolbox_nebula()
-print(df)
+pro = qh.pro_api(token="此处输入您的token, 请联系奇货可查获取！")
+variety_positions_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
+print(variety_positions_df)
 ```
 
-结果显示:
+示例结果:
+
 ```
-         0          1           2       3   4
-a2001    5 -10.679325   349463900   a2001  豆一
-ag1912   3   2.653326  1947907804  ag1912  沪银
-ag2006   3  13.353891   846397165  ag2006  沪银
-al1911   5 -33.254705   382253375  al1911  沪铝
-al1912   3 -10.072681  1012827354  al1912  沪铝
-     ..        ...         ...     ...  ..
-zc2001   9  -4.527521  1084279140  zc2001  郑煤
-zc2005   7  20.085050   452214336  zc2005  郑煤
-zn1912  23 -10.902040  1188122720  zn1912  沪锌
-zn2001  12  -9.745322  1282685360  zn2001  沪锌
-zn2002   2  -8.354605   599360000  zn2002  沪锌
+   broker  short  short_chge
+0    银河期货  60987       -4228
+1    永安期货  57520       -1071
+2    中信期货  38120        -620
+3    国泰君安  36498         528
+4    方正中期  32105        4444
+5    海通期货  29638       -2783
+6    东海期货  29250         450
+7    光大期货  28458         -84
+8    南华期货  27853        -144
+9    中辉期货  26101        -553
+10   中大期货  23761        1572
+11   鲁证期货  22501        -598
+12   兴证期货  22262        -842
+13   东证期货  21675        -686
+14   徽商期货  18966        -607
+15   中信建投  18583        -625
+16   华泰期货  17076       -5797
+17   国投安信  16808         349
+18   申银万国  14876         376
+19   广发期货  14588       -2196
+20   大地期货      0      -14603
 ```
 
 # 特别说明
@@ -104,4 +103,10 @@ zn2002   2  -8.354605   599360000  zn2002  沪锌
 
 0.0.7
 更新 README 文档
+
+0.0.8
+第二版接口测试
+
+0.0.9
+更新说明文档
 ```

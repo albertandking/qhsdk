@@ -8,12 +8,7 @@ desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
 
-from qhsdk.utils.token_process import set_token
-
-# set_token(token="")
-
-# pro = pro_api()
-pro = pro_api("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoidGVzdGVyIiwiYXVkIjoiZDlkZDc3YjItZDRhYi01ZTljLTQ5MWMtY2EzNzRiYTQ3NDQ3IiwiaWF0IjoxNTgxNjUyMTg2LCJleHAiOjE2MTMzMTgzOTl9.Vk9yQPloxSRg_dfo3sfIyRoz7jmbHIpilw0rejtXpUs")
+pro = pro_api(token="")
 
 variety_positions_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
 print(variety_positions_df)

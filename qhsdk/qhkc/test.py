@@ -130,3 +130,36 @@ print(broker_positions_process_df)
 # 席位-席位对对碰
 broker_pk_df = pro.broker_pk(broker1="永安期货", broker2="兴证期货", symbol="RB")
 print(broker_pk_df)
+
+
+# 指数-指数信息
+index_info_df = pro.index_info(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959")
+print(index_info_df)
+
+# 指数-指数权重数据
+index_weights_df = pro.index_weights(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+print(index_weights_df)
+
+# 指数-指数行情数据
+index_quotes_df = pro.index_quotes(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+print(index_quotes_df)
+
+# 指数-指数沉淀资金数据
+index_money_df = pro.index_money(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+print(index_money_df)
+
+# 指数-公共指数列表
+index_official_df = pro.index_official()
+print(index_official_df)
+
+# 指数-个人指数列表---------------------------------------------无法访问
+index_mine_df = pro.index_mine(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+print(index_mine_df)
+
+# 指数-指数资金动向
+index_trend_df = pro.index_trend(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+print(index_trend_df)
+
+# 指数-指数的席位盈亏数据
+index_profit_df = pro.index_profit(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", start_date="2018-07-08", end_date="2018-08-08")
+print(index_profit_df)

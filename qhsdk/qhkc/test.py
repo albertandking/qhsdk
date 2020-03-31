@@ -75,34 +75,58 @@ variety_all_df = pro.variety_all()
 print(variety_all_df)
 
 
-
-
-
+# 席位-商品净持仓数据
 variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
 print(variety_net_positions_df)
 
-variety_quotes_df = pro.variety_quotes(code="rb1810", date="2018-08-08")
-print(variety_quotes_df)
-
-variety_money_df = pro.variety_money(symbol="RB", date="2018-08-08")
-print(variety_money_df)
-
-variety_bbr_df = pro.variety_bbr(code="rb1810", date="2018-08-08")
-print(variety_bbr_df)
-
-variety_net_money_chge_df = pro.variety_net_money_chge(code="rb1810", date="2018-08-08")
-print(variety_net_money_chge_df)
-
-variety_net_money_df = pro.variety_net_money(code="rb1810", date="2018-08-08")
-print(variety_net_money_df)
-
-variety_total_money_df = pro.variety_total_money(code="rb1810", date="2018-08-08")
-print(variety_total_money_df)
-
-# 席位
+# 席位-席位持仓数据
 broker_positions_df = pro.broker_positions(broker="永安期货", date="2018-08-08")
 print(broker_positions_df)
 
-# 指数
-index_info_df = pro.index_info(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959")
-print(index_info_df)
+# 席位-席位盈亏数据
+broker_calendar_df = pro.broker_calendar(broker="永安期货", start_date="2018-07-08", end_date="2018-08-08")
+print(broker_calendar_df)
+
+# 席位-席位每日大资金流动数据
+broker_flow_df = pro.broker_flow(broker="永安期货", date="2018-08-08", offset="1000000")
+print(broker_flow_df)
+
+# 席位-席位多空比数据
+broker_bbr_df = pro.broker_bbr(broker="永安期货", date="2018-08-08")
+print(broker_bbr_df)
+
+# 席位-席位净持仓保证金变化数据
+broker_net_money_chge_df = pro.broker_net_money_chge(broker="永安期货", date="2018-08-08")
+print(broker_net_money_chge_df)
+
+# 席位-席位净持仓保证金数据
+broker_net_money_df = pro.broker_net_money(broker="永安期货", date="2018-08-08")
+print(broker_net_money_df)
+
+# 席位-席位总持仓保证金数据
+broker_total_money_df = pro.broker_total_money(broker="永安期货", date="2018-08-08")
+print(broker_total_money_df)
+
+# 席位-席位的商品盈亏数据
+broker_profit_df = pro.broker_profit(broker="永安期货", start_date="2018-07-08", end_date="2018-08-08")
+print(broker_profit_df)
+
+# 席位-席位盈利排行
+broker_in_profit_list_df = pro.broker_in_profit_list(start_date="2018-07-08", end_date="2018-08-08", count="10")
+print(broker_in_profit_list_df)
+
+# 席位-席位亏损排行
+broker_in_loss_list_df = pro.broker_in_loss_list(start_date="2018-07-08", end_date="2018-08-08", count="10")
+print(broker_in_loss_list_df)
+
+# 席位-所有席位数据
+broker_all_df = pro.broker_all(offset_days="365")
+print(broker_all_df)
+
+# 席位-建仓过程
+broker_positions_process_df = pro.broker_positions_process(broker="永安期货", code="rb1810")
+print(broker_positions_process_df)
+
+# 席位-席位对对碰
+broker_pk_df = pro.broker_pk(broker1="永安期货", broker2="兴证期货", symbol="RB")
+print(broker_pk_df)

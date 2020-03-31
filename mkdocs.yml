@@ -8,7 +8,7 @@ nav:
     - 工具: tools.md
     - 资金: fund.md
 theme:
-    name: readthedocs
+    name: mkdocs
     highlightjs: true
     hljs_languages:
         - yaml

@@ -8,7 +8,9 @@ desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
 
-pro = pro_api(token="")
+from qhsdk.utils.token_process import set_token
+set_token(token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJhdWQiOiJiMWYyZTc3Ny05NmYyLWIwMmMtMmE5Mi0yM2YzNTE4YWNmMWIiLCJpYXQiOjE1ODU2NzYzNTIsImV4cCI6MTYxMjQ1NDM5OX0.I8haeqGQpo7GooQPM5XEqqLbPHZmd8IC68ir2N9W8O0")
+pro = pro_api()
 
 # 商品-持仓数据-多头龙虎榜
 variety_positions_longs_df = pro.variety_positions(fields="longs", code="rb1810", date="2018-08-08")
@@ -152,8 +154,8 @@ print(index_money_df)
 index_official_df = pro.index_official()
 print(index_official_df)
 
-# 指数-个人指数列表---------------------------------------------无法访问
-index_mine_df = pro.index_mine(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2018-08-08")
+# 指数-个人指数列表
+index_mine_df = pro.index_mine()
 print(index_mine_df)
 
 # 指数-指数资金动向
@@ -163,3 +165,32 @@ print(index_trend_df)
 # 指数-指数的席位盈亏数据
 index_profit_df = pro.index_profit(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", start_date="2018-07-08", end_date="2018-08-08")
 print(index_profit_df)
+
+# 基本面-基差
+basis_df = pro.basis(variety="RB", date="2018-08-08")
+print(basis_df)
+
+# 基本面-期限结构
+term_structure_df = pro.term_structure(variety="RB", date="2018-08-08")
+print(term_structure_df)
+
+# 基本面-库存数据
+inventory_df = pro.inventory(variety="RB", date="2018-08-08")
+print(inventory_df)
+
+# 基本面-利润数据
+profit_df = pro.profit(variety="RB", date="2019-12-12")
+print(profit_df)
+
+# 基本面-现货贸易商报价
+trader_prices_df = pro.trader_prices(variety="RB", date="2020-03-30")
+print(trader_prices_df)
+
+# 基本面-跨期套利数据
+intertemporal_arbitrage_df = pro.intertemporal_arbitrage(variety="RB", code1="01", code2="05", date="2018-08-08")
+print(intertemporal_arbitrage_df)
+
+# 基本面-自由价差数据
+free_spread_df = pro.free_spread(variety1="RB", code1="01", variety2="HC", code2="01", date="2018-08-08")
+print(free_spread_df)
+

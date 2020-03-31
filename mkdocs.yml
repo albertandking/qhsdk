@@ -1,0 +1,16 @@
+site_name: Qhsdk
+nav:
+    - 主页: index.md
+    - 商品: commodity.md
+    - 席位: broker.md
+    - 指数: index_.md
+    - 基本面: fundamental.md
+    - 工具: tools.md
+    - 资金: fund.md
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
+        - python

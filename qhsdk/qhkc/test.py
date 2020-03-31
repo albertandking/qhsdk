@@ -10,8 +10,27 @@ from qhsdk.pro.data_pro import pro_api
 
 pro = pro_api(token="")
 
-variety_positions_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
-print(variety_positions_df)
+# 商品-持仓数据-多头龙虎榜
+variety_positions_longs_df = pro.variety_positions(fields="longs", code="rb1810", date="2018-08-08")
+print(variety_positions_longs_df)
+
+# 商品-持仓数据-空头龙虎榜
+variety_positions_shorts_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
+print(variety_positions_shorts_df)
+
+# 商品-合约行情数据
+variety_quotes_df = pro.variety_quotes(fields="", code="rb1810", date="2018-08-08")
+print(variety_quotes_df)
+
+# 商品-商品沉淀资金数据接口
+variety_money_df = pro.variety_money(fields="", symbol="RB", date="2018-08-08")
+print(variety_money_df)
+
+# 商品-合约多空比数据
+variety_bbr_df = pro.variety_bbr(fields="", code="rb1810", date="2018-08-08")
+print(variety_bbr_df)
+
+
 
 variety_net_positions_df = pro.variety_net_positions(fields="", symbol="RB", broker="永安期货", date="2018-08-08")
 print(variety_net_positions_df)

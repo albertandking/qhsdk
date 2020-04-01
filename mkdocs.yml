@@ -1,6 +1,6 @@
 site_name: qhsdk
 nav:
-    - 主页: index.md
+    - 主页: index.rst
     - 商品: commodity.md
     - 席位: broker.md
     - 指数: index_.md

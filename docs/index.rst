@@ -22,3 +22,6 @@ Welcome to AkShare's Online Documentation!
     commodity.md
     broker.md
     fund.md
+    fundamental.md
+    index_data.md
+    tools.md

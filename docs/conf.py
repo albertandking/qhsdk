@@ -16,14 +16,6 @@ from datetime import datetime
 from recommonmark.transform import AutoStructify
 import sphinx_rtd_theme
 
-
-latex_engine = 'xelatex'
-latex_use_xindy = False
-latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
-}
-
-
 source_suffix = ['.rst', '.md']
 
 github_doc_root = 'https://github.com/rtfd/recommonmark/tree/master/doc/'

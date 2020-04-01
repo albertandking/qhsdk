@@ -16,23 +16,15 @@ from datetime import datetime
 from recommonmark.transform import AutoStructify
 import sphinx_rtd_theme
 
-
-latex_engine = 'xelatex'
-latex_use_xindy = False
-latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
-}
-
-
 source_suffix = ['.rst', '.md']
 
 github_doc_root = 'https://github.com/rtfd/recommonmark/tree/master/doc/'
 
 # -- Project information -----------------------------------------------------
 
-project = 'AkShare'
-copyright = '2019–{}, AkShare developers'.format(datetime.now().year)
-author = 'Albert King'
+project = 'QHSDK'
+copyright = '2019–{}, https://qhkch.com/'.format(datetime.now().year)
+author = 'qhsdk'
 version = "1.0.0"
 
 templates_path = ['_templates']

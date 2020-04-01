@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to qhsdk's documentation!
-=================================
+欢迎来到奇货可查 Python SDK 文档，需要获得授权码，请访问：https://qhkch.com/
+=================================================================================
 
 .. toctree::
    :maxdepth: 2

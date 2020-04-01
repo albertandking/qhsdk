@@ -209,3 +209,12 @@ print(warehouse_receipt_sum_df)
 # 基本面-虚实盘比数据
 virtual_real_df = pro.virtual_real(variety="RB", code="10", date="2018-08-08")
 print(virtual_real_df)
+
+
+# 工具-龙虎牛熊多头合约池
+long_pool_df = pro.long_pool(date="2018-08-08")
+print(long_pool_df)
+
+# 工具-龙虎牛熊空头合约池
+short_pool_df = pro.short_pool(date="2018-08-08")
+print(short_pool_df)

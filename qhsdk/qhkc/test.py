@@ -8,8 +8,6 @@ desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
 
-from qhsdk.utils.token_process import set_token
-set_token(token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJhdWQiOiJiMWYyZTc3Ny05NmYyLWIwMmMtMmE5Mi0yM2YzNTE4YWNmMWIiLCJpYXQiOjE1ODU2NzYzNTIsImV4cCI6MTYxMjQ1NDM5OX0.I8haeqGQpo7GooQPM5XEqqLbPHZmd8IC68ir2N9W8O0")
 pro = pro_api()
 
 # 商品-持仓数据-多头龙虎榜

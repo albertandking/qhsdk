@@ -11,6 +11,7 @@
    :glob:
    :caption: Table of contents:
 
+   installation.md
    broker.md
    commodity.md
    fund.md

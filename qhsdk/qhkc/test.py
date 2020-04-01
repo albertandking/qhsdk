@@ -194,3 +194,18 @@ print(intertemporal_arbitrage_df)
 free_spread_df = pro.free_spread(variety1="RB", code1="01", variety2="HC", code2="01", date="2018-08-08")
 print(free_spread_df)
 
+# 基本面-自由价比数据
+free_ratio_df = pro.free_ratio(variety1="RB", code1="01", variety2="HC", code2="01", date="2018-08-08")
+print(free_ratio_df)
+
+# 基本面-仓单数据
+warehouse_receipt_df = pro.warehouse_receipt(variety="RB", date="2018-08-08")
+print(warehouse_receipt_df)
+
+# 基本面-仓单汇总数据
+warehouse_receipt_sum_df = pro.warehouse_receipt(date="2018-08-08")
+print(warehouse_receipt_sum_df)
+
+# 基本面-虚实盘比数据
+virtual_real_df = pro.virtual_real(variety="RB", code="10", date="2018-08-08")
+print(virtual_real_df)

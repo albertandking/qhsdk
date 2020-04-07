@@ -1,10 +1,9 @@
 # -*- coding:utf-8 -*-
 # /usr/bin/env python
 """
-Author: Albert King
-date: 2019/11/10 22:52
-contact: jindaxiang@163.com
-desc: 数据接口初始化
+Author: qhsdk
+Date: 2019/11/10 22:52
+Desc: 数据接口初始化
 """
 from qhsdk.pro import client
 from qhsdk.utils import token_process

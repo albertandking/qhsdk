@@ -29,7 +29,7 @@ variety_net_positions
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
 print(variety_net_positions_df)
 ```
@@ -74,7 +74,7 @@ broker_positions
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_positions_df = pro.broker_positions(broker="永安期货", date="2018-08-08")
 print(broker_positions_df)
 ```
@@ -175,7 +175,7 @@ broker_calendar
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_calendar_df = pro.broker_calendar(broker="永安期货", start_date="2018-07-08", end_date="2018-08-08")
 print(broker_calendar_df)
 ```
@@ -238,7 +238,7 @@ broker_flow
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_flow_df = pro.broker_flow(broker="永安期货", date="2018-08-08", offset="1000000")
 print(broker_flow_df)
 ```
@@ -311,7 +311,7 @@ broker_bbr
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_bbr_df = pro.broker_bbr(broker="永安期货", date="2018-08-08")
 print(broker_bbr_df)
 ```
@@ -351,7 +351,7 @@ broker_net_money_chge
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_net_money_chge_df = pro.broker_net_money_chge(broker="永安期货", date="2018-08-08")
 print(broker_net_money_chge_df)
 ```
@@ -435,7 +435,7 @@ broker_net_money
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_net_money_df = pro.broker_net_money(broker="永安期货", date="2018-08-08")
 print(broker_net_money_df)
 ```
@@ -519,7 +519,7 @@ broker_total_money
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_total_money_df = pro.broker_total_money(broker="永安期货", date="2018-08-08")
 print(broker_total_money_df)
 ```
@@ -604,7 +604,7 @@ broker_profit
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_profit_df = pro.broker_profit(broker="永安期货", start_date="2018-07-08", end_date="2018-08-08")
 print(broker_profit_df)
 ```
@@ -689,7 +689,7 @@ broker_in_profit_list
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_in_profit_list_df = pro.broker_in_profit_list(start_date="2018-07-08", end_date="2018-08-08", count="10")
 print(broker_in_profit_list_df)
 ```
@@ -739,7 +739,7 @@ broker_in_loss_list
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_in_loss_list_df = pro.broker_in_loss_list(start_date="2018-07-08", end_date="2018-08-08", count="10")
 print(broker_in_loss_list_df)
 ```
@@ -787,7 +787,7 @@ broker_all
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_all_df = pro.broker_all(offset_days="365")
 print(broker_all_df)
 ```
@@ -893,7 +893,7 @@ broker_positions_process
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_positions_process_df = pro.broker_positions_process(broker="永安期货", code="rb1810")
 print(broker_positions_process_df)
 ```
@@ -995,7 +995,7 @@ broker_pk
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 broker_pk_df = pro.broker_pk(broker1="永安期货", broker2="兴证期货", symbol="RB")
 print(broker_pk_df)
 ```

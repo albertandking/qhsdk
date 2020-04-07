@@ -18,3 +18,4 @@
    fundamental.md
    index_data.md
    tools.md
+   changelog.md

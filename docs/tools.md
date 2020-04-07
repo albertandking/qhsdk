@@ -27,7 +27,7 @@ long_pool
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 long_pool_df = pro.long_pool(date="2018-08-08")
 print(long_pool_df)
 ```
@@ -98,7 +98,7 @@ short_pool
 
 ```python
 from qhsdk import pro_api
-pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处token默认会转存到您本地，仅需要输入一次
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
 short_pool_df = pro.short_pool(date="2018-08-08")
 print(short_pool_df)
 ```

@@ -1,9 +1,8 @@
 # -*- coding:utf-8 -*-
 # /usr/bin/env python
 """
-Author: Albert King
+Author: qhsdk
 date: 2020/2/13 21:28
-contact: jindaxiang@163.com
 desc: API常量文件
 """
 TOKEN_F_P = 'tk.csv'

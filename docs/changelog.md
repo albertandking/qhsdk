@@ -1,6 +1,6 @@
-"""qhsdk 是基于 Python 的为奇货可查客户服务的专用API接口"""
+# 更新记录
 
-"""
+```
 0.0.1
 发布测试版本
 
@@ -36,18 +36,5 @@
 
 0.1.2
 增加 token 使用说明
-"""
+```
 
-__version__ = '0.1.2'
-__author__ = 'qhsdk'
-
-
-"""
-for qhsdk pro api
-"""
-from qhsdk.pro.data_pro import pro_api
-
-"""
-for qhsdk pro api token set
-"""
-from qhsdk.utils.token_process import set_token

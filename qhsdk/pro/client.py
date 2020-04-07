@@ -1,9 +1,8 @@
 # -*- coding:utf-8 -*-
 # /usr/bin/env python
 """
-Author: Albert King
+Author: qhsdk
 date: 2019/11/10 22:52
-contact: jindaxiang@163.com
 desc: 数据接口源代码
 """
 from functools import partial

@@ -115,4 +115,7 @@ print(variety_positions_df)
 
 0.1.1
 预览版
+
+0.1.2
+增加 token 使用说明
 ```

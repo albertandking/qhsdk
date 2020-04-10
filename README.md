@@ -118,4 +118,7 @@ print(variety_positions_df)
 
 0.1.2
 增加 token 使用说明
+
+0.1.3
+增加 inventory 参数类型二
 ```

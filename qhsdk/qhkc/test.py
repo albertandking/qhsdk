@@ -171,8 +171,12 @@ print(basis_df)
 term_structure_df = pro.term_structure(variety="RB", date="2018-08-08")
 print(term_structure_df)
 
-# 基本面-库存数据
+# 基本面-库存数据-参数类型一
 inventory_df = pro.inventory(variety="RB", date="2018-08-08")
+print(inventory_df)
+
+# 基本面-库存数据-参数类型二
+inventory_df = pro.inventory(variety="RB", year="2019", week_number="10")
 print(inventory_df)
 
 # 基本面-利润数据
@@ -236,4 +240,3 @@ print(stock_flow_short_df)
 # 资金-每日商品保证金沉淀变化
 money_in_out_df = pro.money_in_out(date="2018-08-08")
 print(money_in_out_df)
-

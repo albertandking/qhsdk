@@ -12,10 +12,10 @@
    :caption: Table of contents:
 
    installation.md
-   broker.md
    commodity.md
-   fund.md
-   fundamental.md
+   broker.md
    index_data.md
+   fundamental.md
    tools.md
+   fund.md
    changelog.md

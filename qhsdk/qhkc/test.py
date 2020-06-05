@@ -9,13 +9,17 @@ from qhsdk.pro.data_pro import pro_api
 
 pro = pro_api()
 
-# 商品-持仓数据-多头龙虎榜
-variety_positions_longs_df = pro.variety_positions(fields="longs", code="rb1810", date="2018-08-08")
+# 商品-合约持仓数据
+variety_positions_longs_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
 print(variety_positions_longs_df)
 
-# 商品-持仓数据-空头龙虎榜
-variety_positions_shorts_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
+# 商品-商品持仓数据
+variety_positions_shorts_df = pro.variety_all_positions(fields="longs", symbol="RB", date="2018-08-08")
 print(variety_positions_shorts_df)
+
+# 席位-商品净持仓数据
+variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
+print(variety_net_positions_df)
 
 # 商品-合约行情数据
 variety_quotes_df = pro.variety_quotes(code="rb1810", date="2018-08-08")
@@ -45,7 +49,7 @@ print(variety_total_money_df)
 variety_profit_df = pro.variety_profit(symbol="RB", start_date="2018-02-08", end_date="2018-08-08")
 print(variety_profit_df)
 
-# 商品-自研指标数据
+# 商品-DeepView数据
 variety_strategies_df = pro.variety_strategies(code="rb1810", date="2018-08-08")
 print(variety_strategies_df)
 
@@ -73,10 +77,14 @@ print(variety_reports_df)
 variety_all_df = pro.variety_all()
 print(variety_all_df)
 
+# 商品-合约索引
+variety_list_df = pro.variety_list(date="2018-08-08")
+print(variety_list_df)
 
-# 席位-商品净持仓数据
-variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
-print(variety_net_positions_df)
+# 商品-非期货公司净持仓
+variety_no_futures_df = pro.variety_no_futures(symbol="RB", date="2018-08-08")
+print(variety_no_futures_df)
+
 
 # 席位-席位持仓数据
 broker_positions_df = pro.broker_positions(broker="永安期货", date="2018-08-08")
@@ -162,6 +170,15 @@ print(index_trend_df)
 # 指数-指数的席位盈亏数据
 index_profit_df = pro.index_profit(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", start_date="2018-07-08", end_date="2018-08-08")
 print(index_profit_df)
+
+# 指数-指数盈利榜
+index_win_top_df = pro.index_win_top(offset_days="21")
+print(index_win_top_df)
+
+# 指数-指数亏损榜
+index_loss_top_df = pro.index_loss_top(offset_days="21")
+print(index_loss_top_df)
+
 
 # 基本面-基差
 basis_df = pro.basis(variety="RB", date="2018-08-08")

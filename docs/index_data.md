@@ -504,3 +504,105 @@ print(index_profit_df)
 113   海通期货  277422320
 114   永安期货  826966870
 ```
+
+## 指数盈利榜
+
+### 接口名称
+
+index_win_top
+
+### 接口描述
+
+指数盈利榜接口
+
+### 请求参数
+
+|参数名|说明|举例|
+|:-----  |:-----|-----                           |
+|offset_days |偏离交易日数	   |21：最近一个月排行|
+
+### 返回参数
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+|id |string   |指数id  |
+|name |string   |指数名  |
+|profit |float   |指数涉及席位盈利金额  |
+|avg_value |float   |指数涉及席位平均持仓沉淀资金  |
+|profit_rate |float   |估算收益率，百分数  |
+
+### 示例代码
+
+```python
+from qhsdk import pro_api
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
+index_win_top_df = pro.index_win_top(offset_days="21")
+print(index_win_top_df)
+```
+
+### 返回示例
+
+```
+                                          id    name  ...     avg_value  profit_rate
+0  index674dc4c1-84f1-8db1-cad7-a21bb71ea7f8     铁矿2  ...  3.744651e+09      18.1304
+1  indexa1b3aa15-6668-8eda-b30a-f0b477fd28f1     铁矿石  ...  1.398919e+10      10.0124
+2  indexd28465b1-a8eb-afa2-ea58-c646a7438c87    铁矿长盈  ...  1.857229e+10       9.5722
+3  index11be1d94-b8ef-722a-5b57-b6cd9c4ce666    铁矿五一  ...  1.477996e+10       7.9091
+4  indexdb6b7c55-07c2-d569-8e3a-26af8bc59e93  永安兴证铁矿  ...  1.151483e+10       7.7250
+5  indexb35711e2-3ed5-2c67-6a82-48c701b2f2fa     铁矿石  ...  2.026642e+10       7.3335
+6  indexd755b6fa-87b3-6a7a-95cc-bf8aa759b222   永安铁矿石  ...  1.024454e+10       7.0450
+7  index1506569c-8b10-2116-daae-58086696a582      铁矿  ...  1.024454e+10       7.0450
+8  index5d957298-5e97-fc5a-d8db-6b117fe2888b  砍一刀铁矿石  ...  1.024454e+10       7.0450
+9  index35d8706e-9521-927c-40ec-d1968558eabf  铁矿席位组合  ...  2.057937e+10       6.9692
+```
+
+## 指数亏损榜
+
+### 接口名称
+
+index_loss_top
+
+### 接口描述
+
+指数亏损榜接口
+
+### 请求参数
+
+|参数名|说明|举例|
+|:-----  |:-----|-----                           |
+|offset_days |偏离交易日数	   |21：最近一个月排行|
+
+### 返回参数
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+|id |string   |指数id  |
+|name |string   |指数名  |
+|profit |float   |指数涉及席位盈利金额  |
+|avg_value |float   |指数涉及席位平均持仓沉淀资金  |
+|profit_rate |float   |估算收益率，百分数  |
+
+### 示例代码
+
+```python
+from qhsdk import pro_api
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
+index_loss_top_df = pro.index_loss_top(offset_days="21")
+print(index_loss_top_df)
+```
+
+### 返回示例
+
+```
+                                          id    name  ...     avg_value  profit_rate
+0  index018dece5-dd79-6f90-40ee-2145b8f63d36  东海鲁证黑色  ...  1.139614e+10     -11.4078
+1  indexfd1e5bf3-b04b-45b5-fbe0-a76f52785f28       2  ...  5.370023e+08      -9.4455
+2  indexad2c6232-b1fc-c23a-057b-b750132fdbbb       2  ...  5.370023e+08      -9.4455
+3  index1b58f9e4-d74e-973c-1b57-a089dbcfe0f7   棕榈222  ...  2.446498e+09      -5.4039
+4  indexd70b176f-c66b-1853-1bc4-e0409f3948fb  eunika  ...  1.707828e+09      -4.3804
+5  indexd2785b34-7f1c-85f9-5a0b-63fa2de3d8e1    长江一号  ...  3.141992e+08      -4.0436
+6  index8efd36d3-0032-7bb1-417f-8ab9f83e6b8d     棕榈油  ...  1.626596e+07      -3.9752
+7  index8d9c193a-661a-6cba-0729-2715ee170678      螺纹  ...  2.123482e+08      -3.8498
+8  indexd76364f5-3c6a-a211-9f1a-d3023d4ecda8      苹果  ...  5.409269e+08      -3.6643
+9  indexe1b18bc3-687a-2ce8-4641-1ac05a41803d  油脂追踪03  ...  1.089616e+10      -3.1328
+```

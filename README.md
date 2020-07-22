@@ -124,4 +124,7 @@ print(variety_positions_df)
 
 0.1.4
 新增: 合约持仓数据接口, 商品持仓数据接口, 修复部分接口与文档一致
+
+0.1.5
+新增: 增加 broker_positions_process 中 start_date 和 end_date 可选参数
 ```

@@ -67,4 +67,3 @@ class DataApi:
 
     def __getattr__(self, name):
         return partial(self.query, name)
-

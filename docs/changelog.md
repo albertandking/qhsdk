@@ -36,5 +36,17 @@
 
 0.1.2
 增加 token 使用说明
+
+0.1.3
+增加 inventory 参数类型二
+
+0.1.4
+新增: 合约持仓数据接口, 商品持仓数据接口, 修复部分接口与文档一致
+
+0.1.5
+新增: 增加 broker_positions_process 中 start_date 和 end_date 可选参数
+
+0.1.6
+新增: 增加 variety_calc_positions 接口
 ```
 

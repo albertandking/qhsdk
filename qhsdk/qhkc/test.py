@@ -2,7 +2,7 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-date: 2020/2/13 21:33
+date: 2020/10/13 16:33
 desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
@@ -13,11 +13,15 @@ pro = pro_api()
 variety_positions_longs_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
 print(variety_positions_longs_df)
 
+# 商品-合约反算持仓数据
+variety_calc_positions_df = pro.variety_calc_positions(fields="longs", fcode="rb1810", date="2018-08-08")
+print(variety_calc_positions_df)
+
 # 商品-商品持仓数据
 variety_positions_shorts_df = pro.variety_all_positions(fields="longs", symbol="RB", date="2018-08-08")
 print(variety_positions_shorts_df)
 
-# 席位-商品净持仓数据
+# 商品-商品净持仓数据
 variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
 print(variety_net_positions_df)
 

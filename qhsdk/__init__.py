@@ -45,9 +45,12 @@
 
 0.1.5
 新增: 增加 broker_positions_process 中 start_date 和 end_date 可选参数
+
+0.1.6
+新增: 增加 variety_calc_positions 接口
 """
 
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 __author__ = 'qhsdk'
 
 

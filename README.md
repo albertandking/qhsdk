@@ -127,4 +127,10 @@ print(variety_positions_df)
 
 0.1.5
 新增: 增加 broker_positions_process 中 start_date 和 end_date 可选参数
+
+0.1.6
+新增: 增加 variety_calc_positions 接口
+
+0.1.7
+修改: 修改 variety_all 接口, 新增 3 个字段
 ```

@@ -2,8 +2,8 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-date: 2020/10/17 16:33
-desc: 接口测试文件
+Date: 2020/12/28 16:33
+Desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
 
@@ -24,6 +24,10 @@ print(variety_positions_shorts_df)
 # 商品-商品净持仓数据
 variety_net_positions_df = pro.variety_net_positions(symbol="RB", broker="永安期货", date="2018-08-08")
 print(variety_net_positions_df)
+
+# 商品-商品净持仓多空榜单
+variety_net_position_list_df = pro.variety_net_position_list(symbol="MA", date="2019-12-25", type="1")
+print(variety_net_position_list_df)
 
 # 商品-合约行情数据
 variety_quotes_df = pro.variety_quotes(code="rb1810", date="2018-08-08")

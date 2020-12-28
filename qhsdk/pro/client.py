@@ -2,8 +2,8 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-date: 2019/11/10 22:52
-desc: 数据接口源代码
+Date: 2020/12/28 19:52
+Desc: 数据接口源代码
 """
 from functools import partial
 from urllib import parse

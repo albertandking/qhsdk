@@ -133,4 +133,7 @@ print(variety_positions_df)
 
 0.1.7
 修改: 修改 variety_all 接口, 新增 3 个字段
+
+0.1.8
+新增: 新增 variety_net_position_list 接口
 ```

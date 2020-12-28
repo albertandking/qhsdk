@@ -1,4 +1,4 @@
-"""qhsdk 是基于 Python 的为奇货可查客户服务的专用API接口"""
+"""qhsdk 是基于 Python 的用于奇货可查客户服务的专用 SDK 接口"""
 
 """
 0.0.1
@@ -51,9 +51,12 @@
 
 0.1.7
 修改: 修改 variety_all 接口, 新增 3 个字段
+
+0.1.8
+新增: 新增 variety_net_position_list 接口
 """
 
-__version__ = '0.1.7'
+__version__ = '0.1.8'
 __author__ = 'qhsdk'
 
 

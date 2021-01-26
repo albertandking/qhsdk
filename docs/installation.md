@@ -2,8 +2,8 @@
 
 ## 重要提示
 
-1. 首先请确认安装 [Python](https://www.python.org/) 3.6 及以上版本, 这里推荐 [Python](https://www.python.org/) 3.7.5 版本;
-2. [AkShare](https://github.com/jindaxiang/akshare) 推荐安装最新版本的 [Anaconda](https://www.anaconda.com/), 可以解决大部分安装问题.
+1. 首先请确认安装 [Python](https://www.python.org) 3.6 及以上版本, 这里推荐 [Python](https://www.python.org/) 3.7及以上版本；
+2. 推荐安装最新版本的 [Anaconda](https://www.anaconda.com)，可以解决大部分安装问题。
 
 ## 安装 qhsdk
 
@@ -34,7 +34,7 @@ import qhsdk as qh
 qh.set_token("在此处输入奇货可查的 token，可以联系奇货可查管理员获取")
 ```
 
-如上代码进行设置后，之后在本地调取数据可以直接使用如下代码：
+如上代码进行设置后，之后在本地调取数据可以直接使用如下代码
 
 ```python
 from qhsdk import pro_api

@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-欢迎来到奇货可查 Python SDK 文档，需要获得授权码，请访问：https://qhkch.com/
+欢迎来到奇货可查 Python SDK 文档，如需要获取授权 token，请访问：https://qhkch.com/
 =================================================================================
 
 .. toctree::

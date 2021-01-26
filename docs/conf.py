@@ -23,7 +23,7 @@ github_doc_root = 'https://github.com/rtfd/recommonmark/tree/master/doc/'
 # -- Project information -----------------------------------------------------
 
 project = 'QHSDK'
-copyright = '2019–{}, https://qhkch.com/'.format(datetime.now().year)
+copyright = f'2019–{datetime.now().year}, 奇货可查'
 author = 'qhsdk'
 version = "1.0.0"
 

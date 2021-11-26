@@ -606,3 +606,50 @@ print(index_loss_top_df)
 8  indexd76364f5-3c6a-a211-9f1a-d3023d4ecda8      苹果  ...  5.409269e+08      -3.6643
 9  indexe1b18bc3-687a-2ce8-4641-1ac05a41803d  油脂追踪03  ...  1.089616e+10      -3.1328
 ```
+
+## 指数资金结构
+
+### 接口名称
+
+index_structure
+
+### 接口描述
+
+指数的资金结构
+
+### 请求参数
+
+|参数名|说明|举例|
+|:-----  |:-----|-----                           |
+|index_id |指数id	   |index0070c0eb-93ba-2da9-6633-fa70cb90e959|
+|date |查询日期	   |2018-07-08|
+|type1 |类型1	   |0: 席位；1: 商品|
+|type2 |类型2	   |0: 持仓变化分布; 1: 净持仓分布; 2: 总持仓分布|
+
+### 返回参数
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+|name |string   |席位 或 商品  |
+|value |float   |资金变化，正数为盈利，负数为亏损，单位元  |
+
+### 示例代码
+
+```python
+from qhsdk import pro_api
+pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")
+index_structure_df = pro.index_structure(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2019-07-08", type1='1', type2="1")
+print(index_structure_df)
+```
+
+### 返回示例
+
+```
+         value name
+0   1593249880  螺纹钢
+1  10688862650  铁矿石
+2   -317324340   焦煤
+3  -2516857200   焦炭
+4   -167675800   硅铁
+5   -127510810   锰硅
+```

@@ -62,6 +62,8 @@ class DataApi:
                     big_df = big_df.append(temp_df, ignore_index=True)
                 big_df.reset_index(inplace=True, drop=True)
                 return big_df
+            elif api_name == "profit_all":
+                return pd.DataFrame(data_json[fields]).T
             else:
                 return pd.DataFrame(data_json[fields])
 

@@ -136,4 +136,7 @@ print(variety_positions_df)
 
 0.1.8
 新增: 新增 variety_net_position_list 接口
+
+0.1.9
+新增: 同步文档 2021年11月25日 版本
 ```

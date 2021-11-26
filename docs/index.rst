@@ -16,6 +16,7 @@
    broker.md
    index_data.md
    fundamental.md
-   tools.md
+   deep_view.md
    fund.md
+   info.md
    changelog.md

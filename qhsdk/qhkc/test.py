@@ -2,7 +2,7 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-Date: 2020/12/28 16:33
+Date: 2021/11/26 14:33
 Desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
@@ -187,10 +187,18 @@ print(index_win_top_df)
 index_loss_top_df = pro.index_loss_top(offset_days="21")
 print(index_loss_top_df)
 
+# 指数-指数资金结构
+index_structure_df = pro.index_structure(index_id="index0070c0eb-93ba-2da9-6633-fa70cb90e959", date="2019-07-08", type1='1', type2="1")
+print(index_structure_df)
+
 
 # 基本面-基差
 basis_df = pro.basis(variety="RB", date="2018-08-08")
 print(basis_df)
+
+# 基本面-基差(按天)
+basis_all_df = pro.basis_all(date="2018-08-08")
+print(basis_all_df)
 
 # 基本面-期限结构
 term_structure_df = pro.term_structure(variety="RB", date="2018-08-08")
@@ -204,13 +212,29 @@ print(inventory_df)
 inventory_df = pro.inventory(variety="RB", year="2019", week_number="10")
 print(inventory_df)
 
+# 基本面-库存数据(天/年)-参数类型三
+inventory_all_df = pro.inventory_all(date="2018-08-10")
+print(inventory_all_df)
+
+# 基本面-库存数据(天/年)-参数类型四
+inventory_all_df = pro.inventory_all(year="2019", week_number="10")
+print(inventory_all_df)
+
 # 基本面-利润数据
 profit_df = pro.profit(variety="RB", date="2019-12-12")
 print(profit_df)
 
+# 基本面-利润数据(天)
+profit_all_df = pro.profit_all(date="2019-12-12")
+print(profit_all_df.T)
+
 # 基本面-现货贸易商报价
 trader_prices_df = pro.trader_prices(variety="RB", date="2020-03-30")
 print(trader_prices_df)
+
+# 基本面-现货贸易商报价(天)
+trader_prices_all_df = pro.trader_prices_all(date="2020-03-30")
+print(trader_prices_all_df)
 
 # 基本面-跨期套利数据
 intertemporal_arbitrage_df = pro.intertemporal_arbitrage(variety="RB", code1="01", code2="05", date="2018-08-08")
@@ -237,13 +261,26 @@ virtual_real_df = pro.virtual_real(variety="RB", code="10", date="2018-08-08")
 print(virtual_real_df)
 
 
-# 工具-龙虎牛熊多头合约池
+# DeepView
+# DeepView-多头合约池接口
 long_pool_df = pro.long_pool(date="2018-08-08")
 print(long_pool_df)
 
-# 工具-龙虎牛熊空头合约池
+# DeepView-空头合约池接口
 short_pool_df = pro.short_pool(date="2018-08-08")
 print(short_pool_df)
+
+# DeepView-多空领先指标
+market_line_df = pro.market_line()
+print(market_line_df)
+
+# DeepView-支撑压力位
+hg_df = pro.hg()
+print(hg_df)
+
+# DeepView-相关性
+correlation_df = pro.correlation(varieties='螺纹钢,铁矿石', start='2020-11-25', end='2020-11-25')
+print(correlation_df)
 
 
 # 资金-每日净流多列表(商品)
@@ -265,3 +302,8 @@ print(stock_flow_short_df)
 # 资金-每日商品保证金沉淀变化
 money_in_out_df = pro.money_in_out(date="2018-08-08")
 print(money_in_out_df)
+
+
+# 资讯-实时资讯接口
+live_news_df = pro.live_news(time='1612501467', count="50")
+print(live_news_df)

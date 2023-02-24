@@ -31,6 +31,7 @@ pip install qhsdk -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirro
 
 ```python
 import qhsdk as qh
+
 qh.set_token("在此处输入奇货可查的 token，可以联系奇货可查管理员获取")
 ```
 
@@ -38,7 +39,9 @@ qh.set_token("在此处输入奇货可查的 token，可以联系奇货可查管
 
 ```python
 from qhsdk import pro_api
+
 pro = pro_api()  # 此处由于全局 token 的设置，在本机不需要再次输入
+
 commodity_flow_long_df = pro.commodity_flow_long(date="2018-08-08")
 print(commodity_flow_long_df)
 ```
@@ -47,7 +50,9 @@ print(commodity_flow_long_df)
 
 ```python
 from qhsdk import pro_api
+
 pro = pro_api(token="在此处输入您的token，可以通过联系管理员获取")  # 此处 token 仅供临时使用
+
 commodity_flow_long_df = pro.commodity_flow_long(date="2018-08-08")
 print(commodity_flow_long_df)
 ```

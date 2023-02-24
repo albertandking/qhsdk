@@ -36,7 +36,9 @@ pip install qhsdk --upgrade
 
 ```python
 import qhsdk as qh
+
 pro = qh.pro_api(token="此处输入您的token, 请联系奇货可查获取！")
+
 variety_positions_df = pro.variety_positions(fields="shorts", code="rb1810", date="2018-08-08")
 print(variety_positions_df)
 ```
@@ -139,4 +141,18 @@ print(variety_positions_df)
 
 0.1.9
 新增: 同步文档 2021年11月25日 版本
+```
+
+# 文档构建
+
+```shell
+cd docs
+```
+
+```shell
+pip install -r requirements.txt
+```
+
+```shell
+sphinx-build -b html . _build
 ```

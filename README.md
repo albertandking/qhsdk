@@ -141,6 +141,10 @@ print(variety_positions_df)
 
 0.1.9
 新增: 同步文档 2021年11月25日 版本
+
+0.1.10
+新增: inventory_new 接口
+修复：返回空值
 ```
 
 # 文档构建

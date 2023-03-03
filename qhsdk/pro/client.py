@@ -2,7 +2,7 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-Date: 2020/12/28 19:52
+Date: 2023/3/3 18:52
 Desc: 数据接口源代码
 """
 from functools import partial
@@ -15,7 +15,7 @@ import requests
 class DataApi:
 
     __token = ""
-    __http_url = "https://api.qhkch.com"
+    __http_url = "https://api.shengyi8.com"
 
     def __init__(self, token, timeout=10):
         """
@@ -51,6 +51,8 @@ class DataApi:
             try:
                 return pd.DataFrame(data_json)
             except ValueError as e:
+                if not data_json:
+                    return
                 result_df = pd.DataFrame.from_dict(data_json, orient="index", columns=[api_name])
                 return result_df
         else:  # 此处增加处理
@@ -59,7 +61,7 @@ class DataApi:
                 for item in data_json[fields].keys():
                     temp_df = pd.DataFrame(data_json[fields][item])
                     temp_df["code"] = item
-                    big_df = big_df.append(temp_df, ignore_index=True)
+                    big_df = pd.concat([big_df, temp_df], ignore_index=True)
                 big_df.reset_index(inplace=True, drop=True)
                 return big_df
             elif api_name == "profit_all":

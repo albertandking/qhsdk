@@ -2,7 +2,7 @@
 # /usr/bin/env python
 """
 Author: qhsdk
-Date: 2021/11/26 14:33
+Date: 2023/3/3 18:33
 Desc: 接口测试文件
 """
 from qhsdk.pro.data_pro import pro_api
@@ -219,6 +219,11 @@ print(inventory_all_df)
 # 基本面-库存数据(天/年)-参数类型四
 inventory_all_df = pro.inventory_all(year="2019", week_number="10")
 print(inventory_all_df)
+
+# 基本面-库存数据-参数类型五
+inventory_new_df = pro.inventory_new()
+print(inventory_new_df)
+
 
 # 基本面-利润数据
 profit_df = pro.profit(variety="RB", date="2019-12-12")

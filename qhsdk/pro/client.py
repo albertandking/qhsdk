@@ -15,7 +15,7 @@ import requests
 class DataApi:
 
     __token = ""
-    __http_url = "https://api.shengyi8.com"
+    __http_url = "https://api.qhkch.com"
 
     def __init__(self, token, timeout=10):
         """

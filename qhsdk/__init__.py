@@ -61,9 +61,12 @@
 0.1.10
 新增: inventory_new 接口
 修复：返回空值
+
+0.1.11
+修复: 修改 url 地址
 """
 
-__version__ = '0.1.10'
+__version__ = '0.1.11'
 __author__ = 'qhsdk'
 
 
